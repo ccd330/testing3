@@ -3,7 +3,7 @@ name: Demo to create automatic PR
 on:
   pull_request:
     branches:
-      - master
+      - 'feature/*'
   workflow_dispatch:
 jobs:
   updateAuthor:
@@ -19,10 +19,9 @@ jobs:
         uses: peter-evans/create-pull-request@v3
         with:
           branch: "auto-pr-branch"
-          base: master
+          base: main
           title: "Auto Pull Request"
           committer: ${{ env.GIT_COMMIT_AUTHOR_NAME }} <${{ env.GIT_COMMIT_AUTHOR_EMAIL }}">
-          author: ${{ env.GIT_COMMIT_AUTHOR_NAME }} <${{ env.GIT_COMMIT_AUTHOR_EMAIL }}">
           body:
             This is to show automatic PR creation
           token: ${{ secrets.GITHUB_TOKEN }}
