@@ -3,7 +3,7 @@ name: Demo to create automatic PR
 on:
   pull_request:
     branches:
-      - 'feature/*'
+      - feature/*
   workflow_dispatch:
 jobs:
   updateAuthor:
