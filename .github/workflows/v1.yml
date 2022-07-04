@@ -33,6 +33,6 @@ jobs:
             github.rest.pulls.list({
               owner,
               repo,
-              head: '${{ github.ref_name }}',
+              head: 'feature/**',
               base: 'main'
             });
